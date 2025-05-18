@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Buttons</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+}
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+.button-container {
+animation: float 3s ease-in-out infinite;
+}
+.particle {
+position: absolute;
+pointer-events: none;
+animation: particle 1s ease-out forwards;
+}
+@keyframes particle {
+0% {
+transform: translate(-50%, -50%) scale(0);
+opacity: 1;
+}
+100% {
+transform: translate(-50%, -50%) scale(2);
+opacity: 0;
+}
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#4F46E5',
+secondary: '#EC4899'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col p-8">
+<header class="w-full max-w-7xl mx-auto flex justify-between items-center mb-16 animate-fade-in">
+    <div class="text-4xl font-['Pacifico'] text-primary hover:scale-105 transition-transform duration-300">
+      <button><a href="main.html"><img src="img.png" style="height: 150px;"></a></button>
+    </div>
+    <button onclick="handleLogin()" class="px-6 py-3 bg-primary text-white !rounded-button hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2">
+        <div class="w-5 h-5 flex items-center justify-center">
+            <i class="ri-user-line"></i>
+        </div>
+        <a href="login.html">
+        <span class="whitespace-nowrap">Login</span>
+        </a>
+    </button>
+</header>
+<main class="flex-1 flex items-center justify-center">
+<div class="grid grid-cols-2 gap-8 max-w-5xl w-full">
+<div class="button-container group" onclick="createParticles(event)">
+    <a href="https://www.codewars.com/">
+    <button class="w-full h-80 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col items-center justify-center text-white p-8 relative overflow-hidden">
+        <div class="w-20 h-20 flex items-center justify-center mb-4">
+            <i class="ri-dashboard-3-line ri-3x"></i>
+        </div>
+        <h3 class="text-2xl font-bold mb-2">C++</h3>
+        <p class="text-center opacity-90">Access your personal analytics and insights</p>
+    </button>
+</a>
+</div>
+<div class="button-container group" style="animation-delay: 0.2s" onclick="createParticles(event)">
+    <a href="https://checkio.org/">
+<button class="w-full h-80 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col items-center justify-center text-white p-8 relative overflow-hidden">
+<div class="w-20 h-20 flex items-center justify-center mb-4">
+<i class="ri-settings-4-line ri-3x"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2">PYTHON</h3>
+<p class="text-center opacity-90">Customize your preferences and options</p>
+</button>
+    </a>
+</div>
+<div class="button-container group" style="animation-delay: 0.4s" onclick="createParticles(event)">
+    <a href="https://www.codingame.com/start/">
+<button class="w-full h-80 bg-gradient-to-br from-pink-400 to-pink-600 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col items-center justify-center text-white p-8 relative overflow-hidden">
+<div class="w-20 h-20 flex items-center justify-center mb-4">
+<i class="ri-user-3-line ri-3x"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2">C-PROG</h3>
+<p class="text-center opacity-90">Manage your account and preferences</p>
+</button>
+    </a>
+</div>
+<div class="button-container group" style="animation-delay: 0.6s" onclick="createParticles(event)">
+    <a href="https://sql-island.informatik.uni-kl.de/">
+<button class="w-full h-80 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col items-center justify-center text-white p-8 relative overflow-hidden">
+<div class="w-20 h-20 flex items-center justify-center mb-4">
+<i class="ri-message-3-line ri-3x"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2">DBMS</h3>
+<p class="text-center opacity-90">Check your inbox and communications</p>
+</button>
+    </a>
+</div>
+</div>
+<script>
+function createParticles(event) {
+const button = event.currentTarget;
+const colors = ['#60A5FA', '#A78BFA', '#F472B6', '#4ADE80'];
+for (let i = 0; i < 8; i++) {
+const particle = document.createElement('div');
+particle.className = 'particle';
+particle.style.width = '40px';
+particle.style.height = '40px';
+particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+particle.style.borderRadius = '50%';
+particle.style.position = 'absolute';
+particle.style.left = event.pageX + 'px';
+particle.style.top = event.pageY + 'px';
+document.body.appendChild(particle);
+setTimeout(() => {
+particle.remove();
+}, 1000);
+}
+button.classList.add('scale-95');
+setTimeout(() => {
+button.classList.remove('scale-95');
+}, 150);
+}
+</script>
+</main>
+<script>
+function handleLogin() {
+    const button = document.querySelector('button');
+    button.classList.add('scale-95');
+    setTimeout(() => {
+        button.classList.remove('scale-95');
+    }, 150);
+    
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    modal.innerHTML = `
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0">
+            <h2 class="text-2xl font-bold mb-6">Welcome Back</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="w-full bg-primary text-white py-2 !rounded-button hover:bg-opacity-90 transition-all duration-300">
+                    Sign In
+                </button>
+            </form>
+            <button onclick="closeModal(this)" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <div class="w-6 h-6 flex items-center justify-center">
+                    <i class="ri-close-line ri-lg"></i>
+                </div>
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    requestAnimationFrame(() => {
+        modal.querySelector('.bg-white').classList.remove('scale-95', 'opacity-0');
+    });
+}
+function closeModal(button) {
+    const modal = button.closest('.fixed');
+    modal.querySelector('.bg-white').classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+        modal.remove();
+    }, 300);
+}
+</script>
+</body>
+</html>

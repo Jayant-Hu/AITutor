@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduTech - Transform Learning Through Technology</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#4F46E5',
+secondary: '#10B981'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.scroll-smooth { scroll-behavior: smooth; }
+.model-viewer {
+width: 100%;
+height: 500px;
+background: #fafafa;
+position: relative;
+}
+@keyframes buttonPulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.05);
+}
+100% {
+transform: scale(1);
+}
+}
+button {
+transition: all 0.3s ease;
+}
+button:hover {
+animation: buttonPulse 1s infinite;
+}
+button:active {
+transform: scale(0.95);
+}
+.rotate-controls {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 20px;
+background: rgba(255,255,255,0.9);
+padding: 10px 20px;
+border-radius: 999px;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes slideInRight {
+from {
+opacity: 0;
+transform: translateX(50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes float {
+0% {
+transform: translateY(0px);
+}
+50% {
+transform: translateY(-10px);
+}
+100% {
+transform: translateY(0px);
+}
+}
+.animate-fadeInUp {
+animation: fadeInUp 1s ease-out forwards;
+}
+.animate-slideInRight {
+animation: slideInRight 1s ease-out forwards;
+}
+.animate-float {
+animation: float 3s ease-in-out infinite;
+}
+.hover-scale {
+transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+transform: scale(1.05);
+}
+</style>
+</head>
+<body class="bg-white min-h-screen">
+<header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+<nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-['Pacifico'] text-primary"><img src="img.png" style="height: 150px;"></span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a href="#" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+<a href="chat.html">
+<a href="#solutions" class="text-gray-700 hover:text-primary transition-colors">Solutions</a>
+</a>
+<a href="game.html">
+<a href="#features" class="text-gray-700 hover:text-primary transition-colors">Features</a>
+</a>
+<a href="https://www.worldbank.org/en/region/lac/publication/innovaciones-digitales-para-la-educacion-en-america-latina#:~:text=The%20Artificial%20Intelligence%20revolution%20is,tasks%2C%20and%20optimize%20educational%20management.">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About Us</a>
+</a>
+</div>
+<button class="!rounded-button bg-primary text-white px-6 py-2 hover:bg-primary/90 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+    <a href="login.html">
+Get Started
+    </a>
+</button>
+</nav>
+</header>
+<main>
+<section class="pt-32 pb-20 px-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://public.readdy.ai/ai/img_res/32202deb0dfc53640d97452193eef7f1.jpg')] bg-cover bg-center opacity-10"></div>
+<div class="container mx-auto grid md:grid-cols-2 gap-12 items-center relative">
+<div>
+<h1 class="text-5xl font-bold text-gray-900 leading-tight mb-6 animate-fadeInUp" style="animation-delay: 0.2s">
+Transform Learning Through Technology
+</h1>
+<p class="text-xl text-gray-600 mb-8 animate-fadeInUp" style="animation-delay: 0.4s">
+Empower your educational journey with cutting-edge AI, VR, and AR technologies. Experience personalized learning like never before.
+</p>
+<div class="flex gap-4 animate-fadeInUp" style="animation-delay: 0.6s">
+    <a href="chat.html">
+<button class="!rounded-button bg-primary text-white px-8 py-3 text-lg hover:bg-primary/90 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-lg">
+Explore Solutions
+</button>
+    </a>
+<button class="!rounded-button border-2 border-primary text-primary px-8 py-3 text-lg hover:bg-primary/5 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-lg">
+Book Demo
+</button>
+</div>
+</div>
+<div class="relative">
+<img src="https://public.readdy.ai/ai/img_res/87215a564ce71fb5ffcee3fe0040d8fe.jpg"
+alt="Educational Technology"
+class="rounded-2xl shadow-2xl animate-float hover-scale">
+</div>
+</div>
+</section>
+<section id="solutions" class="py-20 px-6 bg-gray-50">
+<div class="container mx-auto">
+<h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Our Solutions</h2>
+<p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+Discover our comprehensive suite of educational technology solutions designed to enhance learning experiences.
+</p>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="solutions-grid">
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-brain-line text-primary text-2xl"></i>
+</div>
+<a href="chat.html">
+<h3 class="text-xl font-bold text-gray-900 mb-4">AI Tutoring</h3>
+<p class="text-gray-600 mb-6">Personalized learning paths powered by advanced AI algorithms to adapt to each student's needs.</p>
+<a href="#" class="text-primary hover:text-primary/80 flex items-center gap-2">
+ Learn More</a>
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-virtual-reality-line text-primary text-2xl"></i>
+</div>
+<a href="https://meet.google.com/landing">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Virtual Classroom</h3>
+<p class="text-gray-600 mb-6">Immersive virtual environments for interactive and engaging remote learning experiences.</p>
+<a href="#" class="text-primary hover:text-primary/80 flex items-center gap-2"></a>
+Learn More
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-gamepad-line text-primary text-2xl"></i>
+</div>
+<a href="game.html">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Gamified Learning</h3>
+<p class="text-gray-600 mb-6">Educational games and challenges that make learning fun and motivating for students.</p>
+<a href="#" class="text-primary hover:text-primary/80 flex items-center gap-2">
+Learn More
+<i class="ri-arrow-right-line"></i>
+</a>
+</a>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-augmented-reality-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Recorded Lecture</h3>
+<p class="text-gray-600 mb-6">Revolutionary AR and VR tools that bring learning concepts to life in 3D space.</p>
+<a href="#" class="text-primary hover:text-primary/80 flex items-center gap-2">
+Learn More
+<i class="ri-arrow-right-line"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-6">
+<div class="container mx-auto">
+<h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Interactive 3D Model</h2>
+<p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+Explore our educational technology in detail with this interactive 3D model.
+</p>
+<div class="model-viewer shadow-xl rounded-xl">
+<img src="https://public.readdy.ai/ai/img_res/3bed7956f6c6497893d9e10ad066e537.jpg"
+alt="3D Model"
+class="w-full h-full object-cover rounded-xl animate-float">
+<div class="rotate-controls">
+<button class="!rounded-button bg-white p-3 hover:bg-gray-100 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-md">
+<i class="ri-rotate-left-line text-gray-700"></i>
+</button>
+<button class="!rounded-button bg-white p-3 hover:bg-gray-100 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-md">
+<i class="ri-zoom-in-line text-gray-700"></i>
+</button>
+<button class="!rounded-button bg-white p-3 hover:bg-gray-100 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-md">
+<i class="ri-rotate-right-line text-gray-700"></i>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section id="features" class="py-20 px-6 bg-gray-50">
+<div class="container mx-auto">
+<h2 class="text-4xl font-bold text-center text-gray-900 mb-4">Key Features</h2>
+<p class="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+Discover the powerful features that make our platform unique and effective.
+</p>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-ai-generate text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Smart Analytics</h3>
+<p class="text-gray-600 mb-6">Advanced learning analytics to track progress and optimize learning paths in real-time.</p>
+<button class="text-primary hover:text-primary/80 flex items-center gap-2">
+Read More
+<i class="ri-arrow-right-line"></i>
+</button>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-team-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Collaborative Learning</h3>
+<p class="text-gray-600 mb-6">Interactive tools for group projects and peer-to-peer learning experiences.</p>
+<button class="text-primary hover:text-primary/80 flex items-center gap-2">
+Read More
+<i class="ri-arrow-right-line"></i>
+</button>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Secure Platform</h3>
+<p class="text-gray-600 mb-6">Enterprise-grade security ensuring safe and private learning environments.</p>
+<button class="text-primary hover:text-primary/80 flex items-center gap-2">
+Read More
+<i class="ri-arrow-right-line"></i>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 bg-primary text-white">
+<div class="container mx-auto text-center">
+<h2 class="text-4xl font-bold mb-4">Start Your Learning Journey Today</h2>
+<p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+Join thousands of students and educators who are already transforming education with our platform.
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <a href="chat.html">
+<button class="!rounded-button bg-white text-primary px-8 py-3 text-lg hover:bg-gray-100 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-lg">
+Get Started Now
+    </a>
+</button>
+<button class="!rounded-button border-2 border-white text-white px-8 py-3 text-lg hover:bg-white/10 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-lg">
+Schedule a Demo
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-20 px-6">
+<div class="container mx-auto grid md:grid-cols-4 gap-12">
+<div>
+<span class="text-2xl font-['Pacifico'] mb-6 block"><img src="img.png" style="height: 150px;"></span>
+<p class="text-gray-400 mb-6">Transforming education through innovative technology solutions.</p>
+<div class="flex gap-4">
+<a href="#" class="hover:text-primary transition-colors">
+<i class="ri-twitter-line text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary transition-colors">
+<i class="ri-linkedin-line text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary transition-colors">
+<i class="ri-facebook-line text-xl"></i>
+</a>
+<a href="#" class="hover:text-primary transition-colors">
+<i class="ri-instagram-line text-xl"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Quick Links</h3>
+<ul class="space-y-4">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Contact</h3>
+<ul class="space-y-4 text-gray-400">
+<li class="flex items-center gap-2">
+<i class="ri-map-pin-line"></i>
+123 Innovation Street, Tech City, TC 12345
+</li>
+<li class="flex items-center gap-2">
+<i class="ri-phone-line"></i>
++1 (555) 123-4567
+</li>
+<li class="flex items-center gap-2">
+<i class="ri-mail-line"></i>
+contact@edutech.com
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with our latest news and updates.</p>
+<form class="space-y-4">
+<input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-button bg-gray-800 border-none text-white placeholder-gray-500">
+<button type="submit" class="!rounded-button w-full bg-primary text-white px-6 py-2 hover:bg-primary/90 transition-all transform hover:-translate-y-1 active:translate-y-0 hover:shadow-lg">
+Subscribe
+</button>
+</form>
+</div>
+</div>
+<div class="container mx-auto mt-12 pt-8 border-t border-gray-800">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-400">© 2025 EduTech. All rights reserved.</p>
+<div class="flex gap-6 text-gray-400">
+<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+<a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px'
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('animate-fadeInUp');
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+document.querySelectorAll('#solutions-grid > div').forEach((el, index) => {
+el.style.opacity = '0';
+el.style.animationDelay = `${index * 0.2}s`;
+observer.observe(el);
+});
+document.querySelectorAll('.model-viewer, .grid > div').forEach(el => {
+el.style.opacity = '0';
+observer.observe(el);
+});
+const header = document.querySelector('header');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+const currentScroll = window.pageYOffset;
+if (currentScroll <= 0) {
+header.classList.remove('shadow-md');
+return;
+}
+if (currentScroll > lastScroll) {
+header.classList.add('-translate-y-full');
+} else {
+header.classList.remove('-translate-y-full');
+header.classList.add('shadow-md');
+}
+lastScroll = currentScroll;
+});
+const rotateLeftBtn = document.querySelector('.ri-rotate-left-line').parentElement;
+const rotateRightBtn = document.querySelector('.ri-rotate-right-line').parentElement;
+const zoomBtn = document.querySelector('.ri-zoom-in-line').parentElement;
+let rotation = 0;
+let isZoomed = false;
+rotateLeftBtn.addEventListener('click', () => {
+rotation -= 90;
+document.querySelector('.model-viewer img').style.transform = `rotate(${rotation}deg)`;
+});
+rotateRightBtn.addEventListener('click', () => {
+rotation += 90;
+document.querySelector('.model-viewer img').style.transform = `rotate(${rotation}deg)`;
+});
+zoomBtn.addEventListener('click', () => {
+isZoomed = !isZoomed;
+const img = document.querySelector('.model-viewer img');
+if (isZoomed) {
+img.style.transform = `rotate(${rotation}deg) scale(1.5)`;
+zoomBtn.querySelector('i').classList.replace('ri-zoom-in-line', 'ri-zoom-out-line');
+} else {
+img.style.transform = `rotate(${rotation}deg) scale(1)`;
+zoomBtn.querySelector('i').classList.replace('ri-zoom-out-line', 'ri-zoom-in-line');
+}
+});
+const newsletterForm = document.querySelector('form');
+newsletterForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const email = newsletterForm.querySelector('input[type="email"]').value;
+if (email) {
+const toast = document.createElement('div');
+toast.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-transform duration-300';
+toast.textContent = 'Thank you for subscribing!';
+document.body.appendChild(toast);
+setTimeout(() => {
+toast.remove();
+}, 3000);
+newsletterForm.reset();
+}
+});
+});
+</script>
+</body>
+</html>
